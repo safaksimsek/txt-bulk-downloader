@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Coomer Toplu Medya İndirici",
+  "version": "1.2",
+  "description": "Coomer medya linklerini arka planda kesintisiz indirir.",
+  "permissions": [
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {}
+}

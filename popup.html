@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Coomer Toplu Medya İndirici</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        h2 { margin-top: 0; text-align: center; color: #38bdf8; }
+        .group { margin-bottom: 20px; }
+        label { display: block; font-size: 14px; color: #94a3b8; margin-bottom: 8px; font-weight: bold; }
+        input[type="file"] { width: 100%; font-size: 14px; padding: 10px; background: #0f172a; border: 1px solid #334155; border-radius: 6px; color: #fff; box-sizing: border-box;}
+        input[type="number"] {
+            width: 100px;
+            padding: 10px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-start { background-color: #22c55e; color: #fff; }
+        .btn-stop { background-color: #ef4444; color: #fff; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .progress-box {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .progress-bar-bg {
+            width: 100%;
+            height: 12px;
+            background: #334155;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: #3b82f6;
+            transition: width 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Coomer Medya İndirici (Tam Ekran Modu)</h2>
+
+    <div class="group">
+        <label>TXT Dosyası Seç:</label>
+        <input type="file" id="txtFile" accept=".txt">
+    </div>
+
+    <div class="group">
+        <label>İndirme Aralığı (Saniye):</label>
+        <input type="number" id="delayInput" value="1.5" min="0.5" step="0.5">
+    </div>
+
+    <button id="startBtn" class="btn btn-start" disabled>▶ İndirmeyi Başlat</button>
+    <button id="stopBtn" class="btn btn-stop" disabled>⏹ Durdur</button>
+
+    <div class="progress-box">
+        <div style="display:flex; justify-content:space-between;">
+            <span id="status">Lütfen TXT dosyası seçin...</span>
+            <span id="counter">0 / 0</span>
+        </div>
+        <div class="progress-bar-bg">
+            <div id="progressBar" class="progress-bar-fill"></div>
+        </div>
+    </div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
